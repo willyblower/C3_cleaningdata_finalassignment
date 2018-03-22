@@ -105,13 +105,13 @@ names(Dataclean)=gsub("-","",names(Dataclean))
 names(Dataclean)=gsub("\\(\\)","",names(Dataclean))
 
 # Write data table in a dedicated file
-write.table(Dataclean,file="./data/allDataClean.txt")
+write.table(Dataclean,file="./allDataClean.txt")
 
 ## 5/ create of the 2nd tidy data set from previous step 
 ## & getting average using groups
 Datagroup <- tbl_df(Dataclean)
 # Nota: Alternative if dataset loaded from written file (kept as comment)
-# Datagroup <- read.table("./data/allDataClean.txt")
+# Datagroup <- read.table("./allDataClean.txt")
 
 # Create groups activity and subject
 Datagroup <- group_by(Datagroup,activityname,subjectid)
